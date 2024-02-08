@@ -1,68 +1,104 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* creating CSS Variables
+:root{
+  --background-color: #ffffff;
+  --background-light: #ffffff;
+  --shadow-color: rbga(0, 0, 0, 0.2);
+  --primary-color: rgb(255, 0, 85);
+  --text-color:#0A0A0A;
+  --text-light: #575757;
+  --font-size: 16px;
+  --animation-speed: 1;
+}*/
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+*{
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar{
+  height: 55px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: #fff;
+  z-index: 1;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.sidebar {
+  background-color: #fff;
+  width: 250px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  padding-top: 1em;
+  position: fixed;
+  top: 55px; /* Height of the navbar */
+  bottom: 55px; /* Height of the footer */
+  z-index: 0;
+  overflow-y: auto; /* Add scrollbar if content exceeds sidebar height */
+  text-align: center;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.footer {
+  display: flex; /* Add flex display */
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Horizontally center items */
+  background-color: rgb(48, 132, 104);
+  color: #fff;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+  z-index: 1;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+.footer img {
+  margin-right: 1em; /* Add some space between image and text */
+}
+
+.card {
+  display: flex;
+  flex-direction: column; /* Change flex direction to column */
+  border: 2px solid #000000;
+  border-radius: 4px;
+  box-shadow: 2px 2px 10px #ccc;
+  margin-inline: auto; /* Center the card horizontally */
+  margin-block: 2rem;
+  padding: 2rem;
+  max-width: 350px; /* Limit card width for responsiveness */
+}
+
+.card img {
+  max-width: 100%; /* Make the image responsive within its container */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 1rem; /* Add some space between image and card-info */
+}
+
+.card-info {
+  flex: 1; /* Allow card-info to take remaining space */
+  margin-left: 0; /* Remove margin to align with the image */
+}
+
+.recipe-page {
+  margin-top: 75px;
+  margin-bottom: 75px;
+  margin-left: 250px;
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  justify-content: center; /* Center cards horizontally */
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%; /* Adjust card width for smaller screens */
   }
 }
