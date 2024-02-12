@@ -1,14 +1,3 @@
-/* creating CSS Variables
-:root{
-  --background-color: #ffffff;
-  --background-light: #ffffff;
-  --shadow-color: rbga(0, 0, 0, 0.2);
-  --primary-color: rgb(255, 0, 85);
-  --text-color:#0A0A0A;
-  --text-light: #575757;
-  --font-size: 16px;
-  --animation-speed: 1;
-}*/
 
 *{
   margin: 0;
@@ -75,11 +64,13 @@ body{
   margin-block: 2rem;
   padding: 2rem;
   max-width: 350px; /* Limit card width for responsiveness */
+  max-height: 500px;
+  text-align: center;
 }
 
 .card img {
-  max-width: 100%; /* Make the image responsive within its container */
-  height: auto; /* Maintain aspect ratio */
+  width: 250px; /* Make the image responsive within its container */
+  height: 150px; /* Maintain aspect ratio */
   margin-bottom: 1rem; /* Add some space between image and card-info */
 }
 
@@ -88,7 +79,45 @@ body{
   margin-left: 0; /* Remove margin to align with the image */
 }
 
-.recipe-page {
+.dashboard {
+  margin-top: 75px;
+  margin-bottom: 75px;
+  margin-left: 250px;
+  display: flex;
+  flex-direction: column; /* Adjust flex direction to column */
+  align-items: center; /* Center items horizontally */
+}
+
+.dashboard form {
+  margin-bottom: 20px; /* Add margin between form and list */
+}
+
+.list-container {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  justify-content: center; /* Center cards horizontally */
+}
+
+.about{
+  margin-top: 75px;
+  margin-bottom: 75px;
+  margin-left: 250px;
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  justify-content: center; /* Center cards horizontally */
+}
+
+.not-found{
+  margin-top: 75px;
+  margin-bottom: 75px;
+  margin-left: 250px;
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  justify-content: center; /* Center cards horizontally */
+}
+
+.item-details{
   margin-top: 75px;
   margin-bottom: 75px;
   margin-left: 250px;
@@ -98,7 +127,7 @@ body{
 }
 
 @media (max-width: 768px) {
-  .card {
+  .list-container {
     max-width: 100%; /* Adjust card width for smaller screens */
   }
 }
