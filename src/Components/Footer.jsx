@@ -1,4 +1,4 @@
-function Footer(props) {
+function Footer() {
     return (
       <div className="footer container">
         <img src="src/assets/react.svg" alt="github"/>

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link
 import recipes from "../assets/data/recipes.json";
+import AddRecipe from './AddRecipe'; // Import AddRecipe component
 
 function List() {
     const [listItems, setListItems] = useState(recipes);
@@ -10,16 +11,29 @@ function List() {
         setListItems(updatedListItems);
     };
 
+    const addNewRecipe = (newRecipe) => {
+        const updatedListItems = [...listItems, newRecipe];
+        setListItems(updatedListItems);
+    };
+
     return (
-        <div className='list-container'>
+        <div>
+            <section className='form'>
+            {/* Add the AddRecipe component */}
+            <AddRecipe addNewRecipe={addNewRecipe} />
+            </section>
+            <section className="list-container">
             {listItems.map((data) => {
-                // Define styles based on calorie value
+
                 const calorieStyles = {
-                    backgroundColor: data.calories > 500 ? 'red' : (data.calories >= 150 && data.calories <= 400 ? 'yellow' : 'green')
+                    backgroundColor: data.calories >= 750 ? 'red' :
+                    (data.calories >= 400 && data.calories < 750 ? 'orange' :
+                    (data.calories >= 150 && data.calories < 400 ? 'yellow' :
+                    (data.calories >= 130 && data.calories < 150 ? 'green' : 'green')))
                 };
 
                 return (
-                    <div className="card" key={data.id} style={calorieStyles}> {/* Apply styles here */}
+                    <div className="card" key={data.id} style={calorieStyles}>
                         <img src={data.image} alt={data.name}/>
                         <div className="card-info">
                             <h2>{data.name}</h2>
@@ -31,6 +45,7 @@ function List() {
                     </div>
                 );
             })}
+            </section>
         </div>
     );
 }
