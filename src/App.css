@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -7,50 +10,64 @@
 body{
   font-size: 16px;
   font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.navbar{
-  height: 55px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+.navbar {
+  height: 80px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* To separate logo and links */
   align-items: center;
   position: fixed;
   top: 0;
   width: 100vw;
-  background-color: #fff;
+  background-color: #F35200;
+  padding:  0 20px;
   z-index: 1;
+}
+
+.links {
+  display: flex;
+  gap: 50px;
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #F1DBAE;
+  align-items: center;
 }
 
 .sidebar {
-  background-color: #ffffff47;
+  background-color: #002922;
   width: 250px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-  padding-top: 1em;
+  padding-top: 40px;
   position: fixed;
-  top: 55px; /* Height of the navbar */
-  bottom: 55px; /* Height of the footer */
-  z-index: 0;
-  overflow-y: auto; /* Add scrollbar if content exceeds sidebar height */
+  top: 80px; /* Height of the navbar */
+  bottom: 80px; /* Height of the footer */
+  right: 0;
+  overflow-y: auto;
   text-align: center;
+  border-radius: 20px;
+  margin-right: 25px;
+  margin-top: 25px;
+  font-weight: 400;
+  font-size: 30px;
+  block-size: 400px;
+  font-family: "Overpass", sans-serif;
+  color: #F1DBAE;
 }
 
-.footer {
-  display: flex; /* Add flex display */
-  align-items: center; /* Vertically center items */
-  justify-content: center; /* Horizontally center items */
-  background-color: rgb(255, 136, 31);
-  color: #fff;
-  padding: 1em;
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F35200;
+  height: 80px;
+  width: 100vw;
   position: fixed;
   bottom: 0;
-  width: 100vw;
   text-align: center;
-  z-index: 1;
-}
-
-.footer img {
-  margin-right: 1em; /* Add some space between image and text */
 }
 
 .home{
@@ -59,31 +76,75 @@ body{
   display: flex;
   flex-wrap: wrap; /* Allow cards to wrap to the next line */
   justify-content: center; /* Center cards horizontally */
+  background-color: #FCF7ED;
 }
 
 .card {
+  --main-color: #002922;
+  --bg-color: #FCF7ED;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+  width: 300px;
+  height: 384px;
   display: flex;
-  flex-direction: column; /* Change flex direction to column */
-  border: 2px solid #000000;
-  border-radius: 4px;
-  box-shadow: 2px 2px 10px #ccc;
-  margin-inline: auto; /* Center the card horizontally */
-  margin-block: 2rem;
-  padding: 2rem;
-  max-width: 350px; /* Limit card width for responsiveness */
-  max-height: 500px;
-  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  background: var(--bg-color);
+  margin: 1rem ;
 }
 
 .card img {
-  width: 250px; /* Make the image responsive within its container */
-  height: 150px; /* Maintain aspect ratio */
-  margin-bottom: 1rem; /* Add some space between image and card-info */
+  width: 300px; /* Make the image responsive within its container */
+  height: 200px; /* Maintain aspect ratio */
+  
+  object-fit: cover; /* Preserve the image's aspect ratio while maintaining its fill */
+  border-radius: 20px;
+}
+.card__title {
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--main-color);
+  font-family: "Rubik", sans-serif;
 }
 
-.card-info {
-  flex: 1; /* Allow card-info to take remaining space */
-  margin-left: 0; /* Remove margin to align with the image */
+.card__subtitle {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--submain-color);
+  text-align: center;
+  font-family: "Overpass", sans-serif;
+}
+
+.card__btn {
+  margin-top: 15px;
+  width: 76px;
+  height: 31px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--main-color);
+  background: var(--bg-color);
+  text-transform: uppercase;
+  transition: all 0.3s;
+  margin-inline: 10px;
+}
+
+.card__btn-solid {
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+
+.card__btn:hover {
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+
+.card__btn-solid:hover {
+  background: var(--bg-color);
+  color: var(--main-color);
 }
 
 .recipe-list {
@@ -95,13 +156,56 @@ body{
   align-items: center;
 }
 
+.recipe-list-title{
+  font-family: "Rubik", sans-serif;
+  font-size: 50px;
+  font-weight: 900;
+  color: #002922;
+}
+
 .form {
   margin-top: 75px;
   margin-bottom: 75px;
-  margin-inline: 150px; /* 250px is the width of the sidebar */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  font-family: "Overpass", sans-serif;
+  gap: 10px;
+}
+
+.form_label{
+  font-size: 20px;
+  font-weight: 600;
+  color: #002922;
+  margin-left: 20px;
+}
+
+.form_btn{
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: #002922;
+  color: #F1DBAE;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.form_btn:hover{
+  background-color: #F2AB2D;
+  transform: scale(1.1);
+  color: #002922;
+}
+
+.form_btn:active{
+  background-color: #F35200;
+  transition: all 0.25s;
+  color:#F1DBAE;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+  cursor: pointer;
 }
 
 .list-container {
@@ -112,30 +216,191 @@ body{
 }
 
 .about{
-  margin-top: 75px;
-  margin-bottom: 75px;
-  margin-left: 250px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-wrap: wrap; /* Allow cards to wrap to the next line */
-  justify-content: center; /* Center cards horizontally */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #FCF7ED;
+  padding-inline: 400px;
+  padding-block: 200px;
 }
 
-.not-found{
-  margin-top: 75px;
-  margin-bottom: 75px;
-  margin-left: 250px;
-  display: flex;
-  flex-wrap: wrap; /* Allow cards to wrap to the next line */
-  justify-content: center; /* Center cards horizontally */
+.about p{
+  font-size: 20px;
+  color: #002922;
+  margin: 10px;
+  font-family: "Overpass", sans-serif;
+  text-align: center;
 }
 
-.item-details{
-  margin-top: 75px;
-  margin-bottom: 75px;
-  margin-left: 250px;
+.about img{
+  margin-top: 80px;
+}
+
+.authors{
+  font-family: "Overpass", sans-serif;
+}
+
+.not-found {
+  position: fixed;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-wrap: wrap; /* Allow cards to wrap to the next line */
-  justify-content: center; /* Center cards horizontally */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FCF7ED;
+  font-size: 20px;
+  color: #002922;
+  text-align: center;
+}
+
+.not-found h1{
+  font-family: "Rubik", sans-serif;
+  font-weight: 900;
+  font-size: 300px;
+  color: #002922;
+}
+
+.not-found p {
+  margin: 20px;
+  font-family: "Overpass", sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  color: #002922;
+}
+
+.item-details {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FCF7ED;
+  z-index: 0;
+}
+
+.item-details h1{
+  font-family: "Rubik", sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+  color: #002922;
+  margin: 10px;
+}
+.item-details p {
+  margin: 10px;
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #002922;
+}
+
+.item-details img {
+  width: 70%;
+  max-width: 600px;
+  height: auto;
+}
+
+.Btn {
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: .4s;
+  cursor: pointer;
+  position: relative;
+  background-color: #002922;
+  overflow: hidden;
+}
+
+.svgIcon {
+  transition-duration: .3s;
+}
+
+.svgIcon path {
+  fill: #F1DBAE;
+}
+
+.text {
+  position: absolute;
+  color: #F1DBAE;
+  width: 120px;
+  font-weight: 600;
+  opacity: 0;
+  transition-duration: .4s;
+}
+
+.Btn:hover {
+  width: 110px;
+  transition-duration: .4s;
+  border-radius: 30px;
+}
+
+.Btn:hover .text {
+  opacity: 1;
+  transition-duration: .4s;
+}
+
+.Btn:hover .svgIcon {
+  opacity: 0;
+  transition-duration: .3s;
+}
+
+.btn {
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  transition: all 0.5s ease-in-out;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  background: #002922;
+  color: #F1DBAE;
+}
+
+
+.btn .icon {
+  position: absolute;
+  height: 40px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.btn .text {
+  transform: translateX(55px);
+}
+
+.btn:hover .icon {
+  width: 175px;
+}
+
+.btn:hover .text {
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active .icon {
+  transform: scale(0.85);
 }
 
 @media (max-width: 768px) {

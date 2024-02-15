@@ -21,36 +21,36 @@ function AddRecipe(props) {
 
     return (
         <section>
-            <form onSubmit={handleSubmit}>
-                <label>Name:</label>
+            <form className='form' onSubmit={handleSubmit}>
+                <label className='form_label'>Name</label>
                 <input
                     type="text"
                     name="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
-                <label>Calories:</label>
+                <label className='form_label'>Calories</label>
                 <input
                     type="number"
                     name="calories"
                     value={calories}
                     onChange={(e) => setCalories(e.target.value)}
                 />
-                <label>Servings:</label>
+                <label className='form_label'>Servings</label>
                 <input
                     type="number"
                     name="servings"
                     value={servings}
                     onChange={(e) => setServings(e.target.value)}
                 />
-                <label>Image:</label>
+                <label className='form_label'>Image</label>
                 <input
                     type="text"
                     name="image"
                     value={image}
                     onChange={(e) => setImage(e.target.value)}
                 />
-                <button type="submit">Add Recipe</button>
+                <button className='form_btn' type="submit">Add Recipe</button>
             </form>
         </section>
     );

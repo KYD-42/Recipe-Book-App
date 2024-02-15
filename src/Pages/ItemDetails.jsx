@@ -14,8 +14,7 @@ function ItemDetails() {
 
     return (
         <div className="item-details">
-            <h1>Recipe Details</h1>
-            <h2>{recipe.name}</h2>
+            <h1>{recipe.name}</h1>
             <img src={recipe.image} alt={recipe.name} width="300" height="200" />
             <p>Calories: {recipe.calories}</p>
             <p>Servings: {recipe.servings}</p>

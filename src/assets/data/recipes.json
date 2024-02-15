@@ -110,12 +110,5 @@
       "calories": 175,
       "image": "https://i.imgur.com/BMdJhu5.jpg",
       "servings": 1
-    },
-    {
-      "id": "62d8a0bc-1b77-4389-9e7b-2e00cace6a2e",
-      "name": "Yogurt",
-      "calories": 125,
-      "image": "https://i.imgur.com/URhdrAm.png",
-      "servings": 1
     }
   ]

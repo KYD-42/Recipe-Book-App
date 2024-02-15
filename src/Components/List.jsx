@@ -18,7 +18,7 @@ function List() {
 
     return (
         <div>
-            <section className='form'>
+            <section>
             {/* Add the AddRecipe component */}
             <AddRecipe addNewRecipe={addNewRecipe} />
             </section>
@@ -26,23 +26,22 @@ function List() {
             {listItems.map((data) => {
 
                 const calorieStyles = {
-                    backgroundColor: data.calories >= 750 ? 'red' :
-                    (data.calories >= 400 && data.calories < 750 ? 'orange' :
-                    (data.calories >= 150 && data.calories < 400 ? 'yellow' :
-                    (data.calories >= 130 && data.calories < 150 ? 'green' : 'green')))
+                    backgroundColor: data.calories >= 750 ? '#F35200' :
+                    (data.calories >= 400 && data.calories < 750 ? '#F2AB2D' :
+                    (data.calories >= 150 && data.calories < 400 ? '#F1DBAE' :
+                    (data.calories >= 130 && data.calories < 150 ? '#F1DBAE' : '#F1DBAE')))
                 };
 
                 return (
                     <div className="card" key={data.id} style={calorieStyles}>
-                        <img src={data.image} alt={data.name}/>
-                        <div className="card-info">
-                            <h2>{data.name}</h2>
-                            <p>Calories: {data.calories}</p>
-                            <p>Servings: {data.servings}</p>
+                        <div class="card__img"><img src={data.image}/></div>
+                        <div class="card__title"><h2>{data.name}</h2></div>
+                        <div class="card__subtitle"><p>Calories: {data.calories}</p><p>Servings: {data.servings}</p></div>
+                        <div class="card__wrapper">
+                        <Link to={`/recipes/${data.id}`}><button class="card__btn">Details</button></Link>
+                        <button class="card__btn card__btn-solid" onClick={() => handleDelete(data.id)}>Delete</button>
                         </div>
-                        <Link to={`/recipes/${data.id}`}><button>View Details</button></Link>
-                        <button onClick={() => handleDelete(data.id)}>Delete</button>
-                    </div>
+                     </div>
                 );
             })}
             </section>
