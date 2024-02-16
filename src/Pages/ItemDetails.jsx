@@ -53,7 +53,7 @@ function ItemDetails() {
                     value={image}
                     onChange={(e) => setImage(e.target.value)}
                 />
-                <button className='form_btn' type="submit">Add Recipe</button>
+                {/* <button className='form_btn' type="submit">Add Recipe</button> */}
             </form>
         </div>
     );

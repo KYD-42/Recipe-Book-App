@@ -173,7 +173,6 @@ body{
   justify-content: center;
   font-family: "Overpass", sans-serif;
   gap: 10px;
-  z-index: 2;
 }
 
 .form_label{
@@ -286,7 +285,6 @@ body{
   justify-content: center;
   align-items: center;
   background-color: #FCF7ED;
-  z-index: 1;
   
 }
 
