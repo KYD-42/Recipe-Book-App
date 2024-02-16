@@ -34,12 +34,12 @@ function List() {
 
                 return (
                     <div className="card" key={data.id} style={calorieStyles}>
-                        <div class="card__img"><img src={data.image}/></div>
-                        <div class="card__title"><h2>{data.name}</h2></div>
-                        <div class="card__subtitle"><p>Calories: {data.calories}</p><p>Servings: {data.servings}</p></div>
-                        <div class="card__wrapper">
-                        <Link to={`/recipes/${data.id}`}><button class="card__btn">Details</button></Link>
-                        <button class="card__btn card__btn-solid" onClick={() => handleDelete(data.id)}>Delete</button>
+                        <div className="card__img"><img src={data.image}/></div>
+                        <div className="card__title"><h2>{data.name}</h2></div>
+                        <div className="card__subtitle"><p>Calories: {data.calories}</p><p>Servings: {data.servings}</p></div>
+                        <div className="card__wrapper">
+                        <Link to={`/recipes/${data.id}`}><button className="card__btn">Details</button></Link>
+                        <button className="card__btn card__btn-solid" onClick={() => handleDelete(data.id)}>Delete</button>
                         </div>
                      </div>
                 );
