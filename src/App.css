@@ -53,9 +53,10 @@ body{
   margin-top: 25px;
   font-weight: 400;
   font-size: 30px;
-  block-size: 400px;
+  block-size: 300px;
   font-family: "Overpass", sans-serif;
   color: #F1DBAE;
+  z-index: 0;
 }
 
 .footer-container {
@@ -167,11 +168,12 @@ body{
   margin-top: 75px;
   margin-bottom: 75px;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   font-family: "Overpass", sans-serif;
   gap: 10px;
+  z-index: 2;
 }
 
 .form_label{
@@ -284,7 +286,8 @@ body{
   justify-content: center;
   align-items: center;
   background-color: #FCF7ED;
-  z-index: 0;
+  z-index: 1;
+  
 }
 
 .item-details h1{
@@ -298,14 +301,15 @@ body{
   margin: 10px;
   font-family: "Overpass", sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 30px;
   color: #002922;
 }
 
 .item-details img {
-  width: 70%;
-  max-width: 600px;
-  height: auto;
+  height: 400px;
+  width: auto;
+  border-radius: 20px;
+  margin: 10px;
 }
 
 .Btn {
@@ -406,5 +410,11 @@ body{
 @media (max-width: 768px) {
   .list-container {
     max-width: 100%; /* Adjust card width for smaller screens */
+  }
+  .item-details {
+    max-width: 100%;
+  }
+  .form {
+    max-width: 100%;
   }
 }
